@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SustainWeekly</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sustain Weekly</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if current_user %>
-      Logged in as <%= current_user.name %>. <%= link_to "Logout", logout_path %>
-    <% else %>
-      <a href="/auth/github">Login</a>
-    <% end %>
-    <%= yield %>
+    <%= render partial: "/@shared/navbar" %>
+
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us3.list-manage.com","uuid":"1a1c4bade00afaf350a94846e","lid":"5cc8cb6046","uniqueMethods":true}) })</script>
   </body>
 </html>
