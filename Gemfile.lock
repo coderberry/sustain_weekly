@@ -358,7 +358,7 @@ DEPENDENCIES
   rb-readline
   sass-rails (~> 5)
   selenium-webdriver
-  sendgrid-ruby
+  sendgrid-ruby (~> 6.0.0)
   standard
   teamocil
   tocer
