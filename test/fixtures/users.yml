@@ -1,0 +1,8 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+coderberry:
+  username: coderberry
+  uid: 12481
+  name: Eric Berry
+  email: eric@codefund.io
+  avatar_url: https://avatars2.githubusercontent.com/u/12481?v=4
