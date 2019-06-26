@@ -6,10 +6,13 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email, null: false
       t.string :name
       t.string :avatar_url
+      t.string :mailchimp_id
+      t.string :newsletter_status
 
       t.index :uid, unique: true
       t.index :username, unique: true
       t.index :email, unique: true
+      t.index :mailchimp_id
 
       t.timestamps
     end

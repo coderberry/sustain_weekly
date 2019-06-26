@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(version: 2019_06_25_203138) do
     t.string "email", null: false
     t.string "name"
     t.string "avatar_url"
+    t.string "mailchimp_id"
+    t.string "newsletter_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["mailchimp_id"], name: "index_users_on_mailchimp_id"
     t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

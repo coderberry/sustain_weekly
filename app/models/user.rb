@@ -29,6 +29,10 @@ class User < ApplicationRecord
 
   # public instance methods ...................................................
 
+  def subscribed?
+    newsletter_status == "subscribed"
+  end
+
   # protected instance methods ................................................
 
   # private instance methods ..................................................
