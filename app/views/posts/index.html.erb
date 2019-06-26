@@ -1,0 +1,3 @@
+<%= render partial: "/@shared/newsletter_subscription_form" unless current_user&.subscribed? %>
+<%= render partial: "/posts/post", collection: @posts %>
+<%= paginate @posts %>

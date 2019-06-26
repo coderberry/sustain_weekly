@@ -1,0 +1,30 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <%= image_tag post.user.avatar_url, style: "border-radius: 5%;" %>
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <h4><%= post.title %></h4>
+      <%= md_to_html(post.body) %>
+      <strong><%= post.user.name %></strong> <small><%= post.user.username %></small> <small><%= time_ago_in_words post.created_at %></small>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
+</article>

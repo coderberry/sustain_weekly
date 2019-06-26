@@ -105,6 +105,8 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
     gibbon (3.2.0)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
@@ -120,6 +122,19 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jwt (2.2.1)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
+    kramdown (2.1.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.7.0)
@@ -363,8 +378,11 @@ DEPENDENCIES
   capybara (>= 2.15)
   dotenv-rails
   faker
+  friendly_id (~> 5.2.4)
   gibbon (~> 3.2.0)
   jbuilder (~> 2.5)
+  kaminari (~> 1.1.1)
+  kramdown (~> 2.1.0)
   letter_opener_web
   listen (>= 3.0.5, < 3.2)
   mechanize

@@ -1,39 +1,28 @@
-class User < ApplicationRecord
+class Post < ApplicationRecord
   # extends ...................................................................
+  extend FriendlyId
+
   # includes ..................................................................
-  
+
   # relationships .............................................................
-  has_many :posts, dependent: :destroy
+  belongs_to :user
 
   # validations ...............................................................
-  validates :email, presence: true
-  validates :uid, presence: true
-  validates :username, presence: true
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :status, presence: true
 
   # callbacks .................................................................
   # scopes ....................................................................
+  
   # additional config (i.e. accepts_nested_attribute_for etc...) ..............
+  friendly_id :title, use: :slugged
 
   # class methods .............................................................
   class << self
-    def find_or_create_from_auth_hash(auth_hash)
-      user = User.find_by(uid: auth_hash["uid"])
-      user ||= User.create!(
-        username: auth_hash["info"]["nickname"],
-        uid: auth_hash["uid"],
-        email: auth_hash["info"]["email"],
-        name: auth_hash["info"]["name"],
-        avatar_url: auth_hash["info"]["image"]
-      )
-      user
-    end
   end
 
   # public instance methods ...................................................
-
-  def subscribed?
-    newsletter_status == "subscribed"
-  end
 
   # protected instance methods ................................................
 
